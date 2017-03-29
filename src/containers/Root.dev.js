@@ -3,9 +3,10 @@ import { Provider } from 'react-redux'
 
 import DevTools from './DevTools'
 
-const Root = ({ store }) => (
+const Root = ({ store, children }) => (
   <Provider store={store}>
     <div>
+      {children}
       <DevTools />
     </div>
   </Provider>
