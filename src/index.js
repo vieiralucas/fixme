@@ -4,6 +4,8 @@ import Root from './containers/Root'
 import App from './containers/App'
 import configureStore from './store/configureStore'
 
+import './index.css'
+
 const store = configureStore()
 
 render(

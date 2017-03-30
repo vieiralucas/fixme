@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
+import Logo from '../components/Logo'
 import * as loginActionCreators from '../actions/LoginActionCreators'
 
 class Login extends Component {
@@ -16,7 +17,16 @@ class Login extends Component {
       }}/>
     }
 
-    return <button onClick={actions.startLogin}>Login</button>
+    return (
+      <div className='login'>
+        <Logo className='login-logo'/>
+        <div className='login-btn-wrapper'>
+          <button onClick={actions.startLogin} className='login-btn'>
+            Sign In with GitHub
+          </button>
+        </div>
+      </div>
+    )
   }
 }
 
