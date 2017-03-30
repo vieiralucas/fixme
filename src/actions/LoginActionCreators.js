@@ -6,12 +6,12 @@ import github from '../services/github'
 export const startLogin = () => dispatch => {
   firebase.auth()
     .then(user => {
+      github.authenticate(user.token)
+
       dispatch({
         type: LOGIN_SUCCESS,
         user
       })
-
-      github.authenticate(user.token)
     })
     .catch(err => {
       dispatch({
