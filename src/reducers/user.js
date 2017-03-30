@@ -8,9 +8,9 @@ const initialUser = {
 const user = (state = initialUser, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
-      return { profile: action.user, error: null }
+      return { ...initialUser, profile: action.user }
     case LOGIN_FAILURE:
-      return { profile: null, error: action.err }
+      return { ...initialUser, error: action.err }
     default:
       return state
   }
