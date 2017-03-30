@@ -23,7 +23,7 @@ FixMe.propTypes = {
 
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user.profile
 })
 
 const mapDispatchToProps = () => ({ })

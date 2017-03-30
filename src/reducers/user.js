@@ -1,11 +1,16 @@
-import { LOGIN_SUCCESS } from '../actions/Login'
+import { LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/Login'
 
-const initialUser = null
+const initialUser = {
+  profile: null,
+  error: null
+}
 
 const user = (state = initialUser, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
-      return action.user
+      return { profile: action.user, error: null }
+    case LOGIN_FAILURE:
+      return { profile: null, error: action.err }
     default:
       return state
   }

@@ -21,11 +21,13 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  user: React.PropTypes.object
+  user: React.PropTypes.object,
+  error: React.PropTypes.object
 }
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user.profile,
+  error: state.user.error
 })
 
 const mapDispatchToProps = (dispatch) => ({
