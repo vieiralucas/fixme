@@ -37,3 +37,8 @@ body {
 .login .login-btn-wrapper .login-btn:hover {
   background: rgba(0, 0, 0, 0.9888);
 }
+
+.issue-item {
+  list-style-type: none;
+  margin-bottom: 1.2em;
+}

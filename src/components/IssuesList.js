@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Issue from './Issue'
+import IssueItem from './IssueItem'
 
 const IssuesList = ({ issues }) => {
   const ordered = issues
-    .sort((a, b) => a.updatedAt.getTime() > b.updatedAt.getTime);
+    .sort((a, b) => a.updatedAt.getTime() - b.updatedAt.getTime());
   return (
     <ul>
       { ordered.map((issue, i) =>
-        <li><Issue key={i} issue={issue} /></li>)
+        <IssueItem key={i} issue={issue} />)
       }
     </ul>
   )
