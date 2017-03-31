@@ -7,6 +7,7 @@ export const startLogin = () => dispatch => {
   firebase.auth()
     .then(user => {
       github.authenticate(user.token)
+      localStorage.setItem('profile', JSON.stringify(user))
 
       dispatch({
         type: LOGIN_SUCCESS,
