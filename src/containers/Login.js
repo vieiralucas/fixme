@@ -21,7 +21,7 @@ class Login extends Component {
       <div className='login'>
         <Logo className='login-logo'/>
         <div className='login-btn-wrapper'>
-          <button onClick={actions.startLogin} className='login-btn'>
+          <button onTouchTap={actions.startLogin} className='login-btn'>
             Sign In with GitHub
           </button>
         </div>
@@ -40,7 +40,7 @@ const mapStateToProps = state => ({
   error: state.user.error
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(loginActionCreators, dispatch)
 })
 

@@ -1,4 +1,11 @@
 import React from 'react'
+import moment from 'moment'
+import { ListItem } from 'material-ui/List'
+import Avatar from 'material-ui/Avatar'
+
+const anchorStyle = {
+  color: 'rgba(0, 0, 0, 0.870588)'
+}
 
 const IssueItem = ({ issue }) => {
   const {
@@ -9,19 +16,19 @@ const IssueItem = ({ issue }) => {
     user
   } = issue;
 
+  const repo = href.split('/').splice(3, 2).join('/')
+  const primaryText = (
+    <a href={href} target='_blank' style={anchorStyle}>
+      {`${repo} - ${title}`}
+    </a>
+  )
+  const secondaryText = moment(updatedAt).fromNow()
+  const avatar = <Avatar src={user.avatarUrl} />
+
   return (
-    <li className='issue-item'>
-      <strong><a href={href}>{ title }</a></strong>
-      <div>
-        <small className='issue-item-small'>
-          opened in { createdAt.toString() } by { user.login }
-        </small>
-        <br />
-        <small className='issue-item-small'>
-          last updated at { updatedAt.toString() }
-        </small>
-      </div>
-    </li>
+    <ListItem primaryText={primaryText}
+      secondaryText={secondaryText}
+      leftAvatar={avatar} />
   )
 }
 
