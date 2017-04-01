@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://vieiralucas.github.io/fixme",
   "dependencies": {
+    "history": "^4.6.1",
     "octokat": "^0.6.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
