@@ -1,6 +1,4 @@
 import React from 'react'
-import { List } from 'material-ui/List'
-import Divider from 'material-ui/Divider'
 
 import IssueItem from './IssueItem'
 
@@ -11,14 +9,14 @@ const IssuesList = ({ issues }) => {
   const renderIssues = issues => issues.map((issue, i) => (
     <div key={i}>
       <IssueItem issue={issue} />
-      <Divider inset={true} />
+      <hr />
     </div>
   ))
 
   return (
-    <List>
+    <ul>
       { renderIssues(ordered) }
-    </List>
+    </ul>
   )
 }
 

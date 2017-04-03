@@ -1,10 +1,25 @@
 import React from 'react'
 import moment from 'moment'
-import { ListItem } from 'material-ui/List'
-import Avatar from 'material-ui/Avatar'
+
+const liStyle = {
+  listStyleType: 'none'
+}
+
+const imgStyle = {
+  float: 'left',
+  height: '36px'
+}
+
+const divStyle = {
+  marginLeft: '45px'
+}
 
 const anchorStyle = {
   color: 'rgba(0, 0, 0, 0.870588)'
+}
+
+const h3Style = {
+  margin: 0
 }
 
 const IssueItem = ({ issue }) => {
@@ -22,12 +37,15 @@ const IssueItem = ({ issue }) => {
     </a>
   )
   const secondaryText = moment(updatedAt).fromNow()
-  const avatar = <Avatar src={user.avatarUrl} />
 
   return (
-    <ListItem primaryText={primaryText}
-      secondaryText={secondaryText}
-      leftAvatar={avatar} />
+    <li style={liStyle}>
+      <img src={user.avatarUrl} alt='user avatar' style={imgStyle} />
+      <div style={divStyle}>
+        <h3 style={h3Style}>{primaryText}</h3>
+        <small>{secondaryText}</small>
+      </div>
+    </li>
   )
 }
 
