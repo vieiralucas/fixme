@@ -9,7 +9,6 @@ const anchorStyle = {
 
 const IssueItem = ({ issue }) => {
   const {
-    createdAt,
     updatedAt,
     htmlUrl: href,
     title,

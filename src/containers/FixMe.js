@@ -21,7 +21,7 @@ class FixMe extends Component {
       user,
       issues,
       loading,
-      error,
+      // error,
       location
     } = this.props
 
